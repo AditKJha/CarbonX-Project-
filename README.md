@@ -2,20 +2,6 @@
 
 A comprehensive web application for managing Environmental, Social, and Governance (ESG) compliance and sustainability reporting, built with the MERN stack (MongoDB, Express, React, Node.js).
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation & Setup](#installation--setup)
-- [Configuration](#configuration)
-- [API Documentation](#api-documentation)
-- [Frontend Components](#frontend-components)
-- [Database Schema](#database-schema)
-- [Authentication](#authentication)
-- [Usage Guide](#usage-guide)
-- [Development](#development)
 
 ## 🌍 Overview
 
@@ -128,101 +114,12 @@ The project uses Tailwind CSS with custom color extensions:
 
 See [client/tailwind.config.js](client/tailwind.config.js) for full configuration.
 
-### Environment Variables
-
-**Server (.env)**
-```
-MONGODB_URI=mongodb://localhost:27017/carbonx
-JWT_SECRET=carbonx_secret_key_2023
-PORT=5000
-```
-
-**Frontend (axiosConfig.js)**
-- `API_URL`: `http://localhost:5000/api`
-
-## 📡 API Documentation
-
-### Authentication Routes
-Base URL: `http://localhost:5000/api/auth`
-
-#### 1. **POST /signup**
-Register a new user
-
-**Request**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "role": "user" // or "admin"
-}
-```
-
-**Response**
-```json
-{
-  "token": "jwt_token_here",
-  "user": {
-    "id": "user_id",
-    "name": "John Doe",
-    "email": "john@example.com",
-    "role": "user"
-  }
-}
-```
-
-#### 2. **POST /login**
-Authenticate user and receive JWT token
-
-**Request**
-```json
-{
-  "email": "john@example.com",
-  "password": "password123"
-}
-```
-
-**Response**
-```json
-{
-  "token": "jwt_token_here",
-  "user": {
-    "id": "user_id",
-    "name": "John Doe",
-    "email": "john@example.com",
-    "role": "user"
-  }
-}
-```
-
 ### Calculator Routes
 Base URL: `http://localhost:5000/api/calculator`
 **Access**: Admin only
 
 #### 1. **POST /calculate**
 Perform calculation with special rules
-
-**Request**
-```json
-{
-  "num1": 5,
-  "num2": 3,
-  "operation": "add" // or "multiply"
-}
-```
-
-**Response**
-```json
-{
-  "result": 15,
-  "calculation": {
-    "num1": 5,
-    "num2": 3,
-    "operation": "add",
-    "description": "5 + 3 = 5 * 3 = 15"
-  }
-}
-```
 
 **Special Rules**
 - `add`: Performs multiplication (5 + 3 = 5 × 3 = 15)
